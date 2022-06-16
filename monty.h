@@ -42,14 +42,27 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void pall(stack_t **stack, unsigned int line_number);
-
-void push(stack_t **stack, unsigned int line_number);
-
 char **readlines(FILE *filepointer);
 
 char **tokenizer(char *lines);
 
 char *get_op(char **tokens);
+
+int op_arg(char **tokens);
+void push(stack_t **stack, unsigned int line_number);
+
+void pall(stack_t **stack, unsigned int line_number);
+
+void pint(stack_t **stack, unsigned int line_number);
+
+void pop_int(stack_t **stack, unsigned int line_number);
+
+void swap_int(stack_t **stack, unsigned int line_number);
+
+void add_ints(stack_t **stack, unsigned int line_number);
+
+void nop_nop(stack_t **stack, unsigned int line_number);
+
+void (*get_op_func(char *line_opcode))(stack_t **, unsigned int);
 
 #endif /* _MONTY_H_ */
