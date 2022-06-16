@@ -35,6 +35,6 @@ typedef struct instruction_s
 
 extern stack_t* head;
 
-void push(int x);
+void push(stack_t **stack, unsigned int line_number);
 
 #endif /* _MONTY_H_ */
