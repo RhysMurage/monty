@@ -1,7 +1,16 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
 
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
 #include <stdlib.h>
+
+
+/* fileptr points to file with byte code*/
+
+extern FILE *fileptr;
+FILE *fileptr;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -33,8 +42,14 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-extern stack_t* head;
+void pall(stack_t **stack, unsigned int line_number);
 
 void push(stack_t **stack, unsigned int line_number);
+
+char **readlines(FILE *filepointer);
+
+char **tokenizer(char *lines);
+
+char *get_op(char **tokens);
 
 #endif /* _MONTY_H_ */
