@@ -18,7 +18,7 @@ void push(stack_t **stack, unsigned int line_number)
 	for (; strcmp(linechunks[i], "push") != 0; i++)
 		;
 	j = i + 1;
-	for (; linechunks[j] == '\0'; j++)
+	for (; linechunks[j] == NULL; j++)
 		;
 	n = atoi(linechunks[j]);
 	if (n == 0)

@@ -43,7 +43,7 @@ char *get_op(char **tokens)
  * traverses the tokens and stop
  * when an char that's not a null byte of encountered
  */
-	while (tokens[op_index] == '\0')
+	while (tokens[op_index] == NULL)
 	{
 		op_index++;
 	}
@@ -68,7 +68,7 @@ int op_arg(char **tokens)
 
 	j = i + 1;
 
-	while (tokens[j] == '\0')
+	while (tokens[j] == NULL)
 		j++;
 
 	op_argument = atoi(tokens[j]);

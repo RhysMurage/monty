@@ -7,7 +7,7 @@
 
 char **readlines(FILE *filepointer)
 {
-	char *file_line;
+	char *file_line = NULL;
 	char **all_lines = NULL;
 	size_t *bufsize = NULL;
 	int i = 0;
@@ -17,7 +17,7 @@ char **readlines(FILE *filepointer)
 		perror("Error: Can't open file <file>");
 		exit(EXIT_FAILURE);
 	}
-/* read the lines from opcode file into an array of lines */
+	/* read the lines from opcode file into an array of lines */
 	while (getline(&file_line, bufsize, filepointer) != -1)
 	{
 		all_lines[i] = file_line;
