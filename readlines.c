@@ -7,7 +7,7 @@
 
 char **readlines(FILE *filepointer)
 {
-	char *file_line = NULL;
+	char *file_line;
 	char **all_lines = NULL;
 	size_t *bufsize = NULL;
 	int i = 0;

@@ -1,14 +1,14 @@
-#ifndef MONTE_H
-#define MONTE_H
+#ifndef _MONTY_H_
+#define _MONTY_H_
+#define _GNU_SOURCE
+#include <string.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
-#include <stdlib.h>
-#include <string.h>
 
 /* fileptr points to file with byte code*/
 
 extern FILE *fileptr;
-FILE *fileptr;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -53,4 +53,5 @@ void swap_int(stack_t **stack, unsigned int line_number);
 void add_ints(stack_t **stack, unsigned int line_number);
 void nop_nop(stack_t **stack, unsigned int line_number);
 void (*get_op_func(char *line_opcode))(stack_t **, unsigned int);
-#endif
+
+#endif /* _MONTY_H_ */
