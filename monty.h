@@ -1,6 +1,5 @@
 #ifndef _MONTY_H_
 #define _MONTY_H_
-#define _GNU_SOURCE
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -9,6 +8,7 @@
 /* fileptr points to file with byte code*/
 
 extern FILE *fileptr;
+FILE *fileptr;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
